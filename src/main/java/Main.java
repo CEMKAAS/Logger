@@ -12,25 +12,25 @@ public class Main {
         logger.log("Запускаем программу");
         logger.log("Введите входные данные для списка");
         logger.log("Введите размер списка:");
-        int o = Integer.parseInt(scanner.next());
+        int sizeList = Integer.parseInt(scanner.next());
         logger.log("Введите верхнюю границу для значений:");
-        int a = Integer.parseInt(scanner.next());
+        int maxIntRandom = Integer.parseInt(scanner.next());
         logger.log("Создаём и наполняем список");
-        List<Integer> result = list(o, a);
+        List<Integer> result = list(sizeList, maxIntRandom);
         logger.log("Вот случайный список:" + result);
         logger.log("Просим Вас ввести входные данные для фильтрации");
         logger.log("Введите порог для фильтра:");
-        int ao = Integer.parseInt(scanner.next());
-        Filter filter = new Filter(ao);
+        int filterInt = Integer.parseInt(scanner.next());
+        Filter filter = new Filter(filterInt);
         logger.log("Отфильрованный список " + filter.filterOut(result));
         logger.log("Завершение программы");
     }
 
-    public static List<Integer> list(int o, int a) {
+    public static List<Integer> list(int sizeList, int maxIntRandom) {
         List<Integer> result = new ArrayList<>();
         Random random = new Random();
-        for (int i = 0; i < o; i++) {
-            result.add(random.nextInt(a));
+        for (int i = 0; i < sizeList; i++) {
+            result.add(random.nextInt(maxIntRandom));
         }
         return result;
     }

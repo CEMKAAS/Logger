@@ -13,12 +13,12 @@ public class Filter {
         Logger logger = Logger.getInstance();
         List<Integer> result = new ArrayList<>();
         logger.log("Запускаем фильтрацию");
-        for (int aO : source) {
-            if (aO < treshold) {
-                logger.log("Элемент " + aO + " не проходит");
+        for (int valueSource : source) {
+            if (valueSource < treshold) {
+                logger.log("Элемент " + valueSource + " не проходит");
             } else {
-                logger.log("Элемент " + aO + " проходит");
-                result.add(aO);
+                logger.log("Элемент " + valueSource + " проходит");
+                result.add(valueSource);
             }
         }
         logger.log("Прошло фильтр " + result.size() + " элемента из " + source.size());
